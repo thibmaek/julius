@@ -1,0 +1,28 @@
+substitutions:
+  device_name: 'lsc-e27-plafondlamp-gastenkamer'
+  friendly_name: 'Plafondlamp Gastenkamer'
+
+esp8266:
+  board: esp01_1m
+
+packages:
+  base_config: !include ./shared/base_config.yaml
+  wifi: !include ./shared/wifi.yaml
+  api: !include ./shared/api.yaml
+
+light:
+  - platform: cwww
+    name: "${friendly_name}"
+    cold_white: output_cold_white
+    warm_white: output_warm_white
+    cold_white_color_temperature: "3500 K"
+    warm_white_color_temperature: "2000 K"
+    restore_mode: ALWAYS_ON
+
+output:
+  - platform: esp8266_pwm
+    id: output_cold_white
+    pin: 14
+  - platform: esp8266_pwm
+    id: output_warm_white
+    pin: 12
