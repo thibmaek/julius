@@ -1,4 +1,4 @@
-wastecollector: RecyleApp
+wastecollector: 'recycleapp'
 resources:
   - restafval
   - papier
