@@ -2,7 +2,6 @@ wifi:
   ssid: !secret wifi_ssid
   password: !secret wifi_password
   ap:
-    ssid: "ESP_${device_name}"
     password: !secret captive_portal_password
 
 captive_portal:
