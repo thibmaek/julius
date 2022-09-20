@@ -1,0 +1,14 @@
+name: 'CI'
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@main
+      - uses: asdf-vm/actions/install@v1
+      - run: make dependencies
+      - run: make lint
