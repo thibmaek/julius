@@ -12,5 +12,7 @@ scene: !include scenes.yaml
 recorder:
   db_url: !secret maria_db_url
 
+alarm_control_panel: !include_dir_merge_list integrations/alarm_control_panel/
+
 # HACS
 afvalbeheer: !include integrations/hacs/afvalbeheer.yaml
