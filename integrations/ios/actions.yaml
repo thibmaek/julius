@@ -1,0 +1,17 @@
+- name: 'Turn everything off'
+  background_color: "#eee8d3"
+  label:
+    text: 'Turn everything off'
+    color: "#082b37"
+  icon:
+    icon: lightbulb-group-off
+    color: "#082b37"
+
+- name: 'Leave home'
+  background_color: "#625d59"
+  label:
+    text: 'Leave home'
+    color: "#f4e7df"
+  icon:
+    icon: door-closed-lock
+    color: "#f4e7df"
