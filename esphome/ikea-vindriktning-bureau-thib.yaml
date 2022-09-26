@@ -1,0 +1,13 @@
+substitutions:
+  device_name: 'ikea-vindriktning-bureau-thib'
+  friendly_name: 'Air Quality Bureau Thib'
+
+esp8266:
+  board: d1_mini
+
+packages:
+  base_config: !include ./shared/base_config.yaml
+  wifi: !include ./shared/wifi.yaml
+  api: !include ./shared/api.yaml
+  metrics: !include ./shared/metrics.yaml
+  ikea_vindriktning: !include ./lib/ikea_vindriktning.yaml
