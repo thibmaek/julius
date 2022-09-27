@@ -16,7 +16,7 @@ ios:
   actions: !include integrations/ios/actions.yaml
 
 alarm_control_panel: !include_dir_merge_list integrations/alarm_control_panel/
-sensor: !include_dir_merge_list integrations/sensors
+sensor: !include_dir_merge_list integrations/sensor
 
 # HACS
 afvalbeheer: !include integrations/hacs/afvalbeheer.yaml
