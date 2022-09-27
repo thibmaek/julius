@@ -7,7 +7,7 @@
 
 - platform: mqtt_room
   device_id: 'irk:89e662660e33c9cb25542beb4a3ac99d'
-  name: 'Apple Watch Thib'
+  name: 'ESPresense Apple Watch Thib'
   state_topic: 'espresense/devices/irk:89e662660e33c9cb25542beb4a3ac99d'
   timeout: 10
   away_timeout: 120
