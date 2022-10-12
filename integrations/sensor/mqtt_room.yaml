@@ -6,6 +6,13 @@
   away_timeout: 120
 
 - platform: mqtt_room
+  device_id: iphone_lotte
+  name: 'ESPresense iPhone Lotte'
+  state_topic: espresense/devices/iphone_lotte
+  timeout: 10
+  away_timeout: 120
+
+- platform: mqtt_room
   device_id: 'irk:89e662660e33c9cb25542beb4a3ac99d'
   name: 'ESPresense Apple Watch Thib'
   state_topic: 'espresense/devices/irk:89e662660e33c9cb25542beb4a3ac99d'
