@@ -1,7 +1,9 @@
 # Loads default set of integrations. Do not remove.
 default_config:
 
-# Text to speech
+frontend:
+  themes: !include_dir_merge_named themes
+
 tts:
   - platform: google_translate
 
