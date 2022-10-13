@@ -1,0 +1,82 @@
+api:
+  services:
+    - service: set_oled_brightness
+      variables:
+        brightness: float
+      then:
+        - lambda: |-
+            id(OLED_DISPLAY).set_contrast(brightness);
+            id(OLED_DISPLAY).fill(COLOR_ON);
+
+time:
+  - platform: homeassistant
+    id: ESPTIME
+
+switch:
+  - platform: template
+    name: "${room} OLED Display"
+    id: OLED_DISPLAY_POWER
+    icon: mdi:monitor
+    assumed_state: true
+    optimistic: true
+    turn_on_action:
+      - lambda: |-
+          id(OLED_DISPLAY).turn_on();
+    turn_off_action:
+      - lambda: |-
+          id(OLED_DISPLAY).turn_off();
+
+font:
+  - file: "lib/assets/fonts/din_alt.ttf"
+    id: FONT_DIN
+    size: 28
+  - file: "lib/assets/fonts/arial.ttf"
+    id: FONT_ARIAL_SM
+    size: 14
+
+display:
+  - platform: ssd1306_i2c
+    id: OLED_DISPLAY
+    model: "SH1106 128x32"
+    address: 0x3C
+    contrast: 60%
+    rotation: 180°
+    lambda: |-
+      it.strftime(2, 32, id(FONT_DIN), TextAlign::BASELINE_LEFT, "%H:%M", id(ESPTIME).now());
+
+      if (id(TEMPERATURE).has_state()) {
+        it.printf(127, 0, id(FONT_ARIAL_SM), TextAlign::TOP_RIGHT, "%.1f°", id(TEMPERATURE).state);
+      }
+
+      if (id(HUMIDITY).has_state()) {
+        it.printf(127, 28, id(FONT_ARIAL_SM), TextAlign::BASELINE_RIGHT, "%.1f%%", id(HUMIDITY).state);
+      }
+
+sensor:
+  - platform: bme280
+    address: 0x76
+    temperature:
+      id: TEMPERATURE
+      name: "${room} Temperature"
+      filters:
+        - lambda: return x + id(TEMPERATURE_OFFSET).state;
+    pressure:
+      id: PRESSURE
+      name: "${room} Pressure"
+    humidity:
+      id: HUMIDITY
+      name: "${room} Humidity"
+    update_interval: 60s
+
+number:
+  - platform: template
+    name: "${room} Temperature offset"
+    id: TEMPERATURE_OFFSET
+    icon: mdi:arrow-expand-horizontal
+    entity_category: config
+    optimistic: true
+    step: 0.5
+    min_value: -5
+    max_value: 5
+    restore_value: true
+    initial_value: -3.0

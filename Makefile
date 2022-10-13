@@ -1,5 +1,5 @@
 dependencies:
-	pip install --upgrade pre-commit yamllint
+	pip install --upgrade pre-commit yamllint pillow
 	pre-commit install
 	pre-commit autoupdate
 

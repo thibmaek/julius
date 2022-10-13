@@ -6,37 +6,34 @@ logger:
 
 binary_sensor:
   - platform: status
-    name: "${friendly_name} — Status"
+    name: "${friendly_name} Status"
     entity_category: diagnostic
 
 button:
+  - platform: restart
+    name: "${friendly_name} Restart"
+    entity_category: config
   - platform: safe_mode
-    name: "${friendly_name} — Safe Mode"
+    name: "${friendly_name} Safe Mode"
     entity_category: config
   - platform: shutdown
-    name: "${friendly_name} — Shutdown"
+    name: "${friendly_name} Shutdown"
     entity_category: config
 
 sensor:
   - platform: uptime
-    name: "${friendly_name} — Uptime"
+    name: "${friendly_name} Uptime"
     entity_category: diagnostic
   - platform: wifi_signal
-    name: "${friendly_name} — Signal"
+    name: "${friendly_name} Signal"
     entity_category: diagnostic
-
-switch:
-  - platform: restart
-    id: base_restart
-    name: "${friendly_name} — Restart"
-    entity_category: config
 
 text_sensor:
   - platform: wifi_info
     ip_address:
-      name: "${friendly_name} — IP"
+      name: "${friendly_name} IP"
       icon: mdi:ip-network
   - platform: version
     icon: mdi:package-variant
-    name: "${friendly_name} — Version"
+    name: "${friendly_name} Version"
     entity_category: diagnostic
