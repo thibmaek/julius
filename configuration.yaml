@@ -21,7 +21,10 @@ alarm_control_panel: !include_dir_merge_list integrations/alarm_control_panel/
 sensor: !include_dir_merge_list integrations/sensor
 
 mqtt:
-  binary_sensor: !include_dir_merge_list integrations/mqtt/binary_sensor
+  binary_sensor: !include integrations/mqtt/binary_sensor.yaml
+
+template:
+  - binary_sensor: !include integrations/template/binary_sensor.yaml
 
 # HACS
 afvalbeheer: !include integrations/hacs/afvalbeheer.yaml
