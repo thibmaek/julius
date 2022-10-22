@@ -1,0 +1,7 @@
+- name: 'Zigbee2MQTT Bridge'
+  unique_id: zigbee2mqtt_bridge_status
+  state_topic: 'zigbee2mqtt/bridge/state'
+  payload_on: 'online'
+  payload_off: 'offline'
+  device_class: connectivity
+  icon: mdi:zigbee
