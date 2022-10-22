@@ -7,7 +7,7 @@
     {% else %}
       mdi:account-multiple-check
     {% endif %}
-  value_template: >
+  state: >
     {{
       not is_state("person.lotte_bijlsma", "home")
       and not is_state("person.thibault_maekelbergh", "home")
