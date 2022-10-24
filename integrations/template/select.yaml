@@ -1,0 +1,6 @@
+- name: 'Badkamer scenes'
+  unique_id: badkamer_scenes
+  state: ''
+  select_option: []
+  options: >
+    {{ area_entities("Badkamer") | select('match', 'scene.') | list }}
