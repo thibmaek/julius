@@ -1,0 +1,9 @@
+- platform: rest
+  name: "Random Cocktail"
+  resource: "https://julep-api-hazltuqnpq-ew.a.run.app/random"
+  scan_interval: 3600
+  value_template: "{{ value_json.name }}"
+  json_attributes:
+    - summary
+    - history
+    - ingredients
