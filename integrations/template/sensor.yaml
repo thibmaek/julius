@@ -1,0 +1,11 @@
+- name: 'Lights on'
+  unique_id: lights_on_amount
+  unit_of_measurement: 'on'
+  icon: >
+    {% if states("sensor.lights_on_amount") | int(default=0) > 0 %}
+      mdi:lightbulb-multiple
+    {% else %}
+      mdi:lightbulb-multiple-off
+    {% endif %}
+  state: >
+    {{ states.light | selectattr('state', 'eq', 'on') | list | count }}
