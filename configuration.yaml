@@ -25,7 +25,8 @@ mqtt:
 
 template:
   - binary_sensor: !include integrations/template/binary_sensor.yaml
-  - select: !include integrations/template/select.yaml
+
+notify: !include_dir_merge_list integrations/notify
 
 # HACS
 afvalbeheer: !include integrations/hacs/afvalbeheer.yaml
