@@ -1,4 +1,4 @@
-- name: 'Lights on'
+- name: 'Lights on amount'
   unique_id: lights_on_amount
   unit_of_measurement: 'on'
   icon: >
