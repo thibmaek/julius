@@ -6,3 +6,4 @@ resources:
 postcode: !secret address_postal_code
 streetnumber: !secret address_street_number
 streetname: !secret address_street_name
+upcomingsensor: 1
