@@ -15,3 +15,21 @@
   icon:
     icon: door-closed-lock
     color: "#f4e7df"
+
+- name: 'Nightlights'
+  background_color: "#625d59"
+  label:
+    text: 'Nightlights'
+    color: "#788AA3"
+  icon:
+    icon: weather-night
+    color: "#EDE7D9"
+
+- name: 'Welcome home'
+  background_color: "#625d59"
+  label:
+    text: 'Welcome home'
+    color: "#ADA0A6"
+  icon:
+    icon: door-open
+    color: "#070707"
