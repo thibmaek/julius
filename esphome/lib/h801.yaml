@@ -1,0 +1,25 @@
+output:
+  - platform: esp8266_pwm
+    pin: 12
+    frequency: 1000 Hz
+    id: pwm_channel_blue
+  - platform: esp8266_pwm
+    pin: 13
+    frequency: 1000 Hz
+    id: pwm_channel_green
+  - platform: esp8266_pwm
+    pin: 15
+    frequency: 1000 Hz
+    id: pwm_channel_red
+  - platform: esp8266_pwm
+    pin: 14
+    frequency: 1000 Hz
+    id: pwm_channel_white
+
+light:
+  - platform: rgbw
+    name: "${friendly_name}"
+    red: pwm_channel_red
+    green: pwm_channel_green
+    blue: pwm_channel_blue
+    white: pwm_channel_white

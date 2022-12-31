@@ -1,0 +1,13 @@
+substitutions:
+  device_name: 'h801-ledstrip-dj-booth'
+  friendly_name: 'LED Strip DJ Booth (Cabinet)'
+
+esp8266:
+  board: esp01_1m
+
+packages:
+  base_config: !include ./shared/base_config.yaml
+  wifi: !include ./shared/wifi.yaml
+  api: !include ./shared/api.yaml
+  metrics: !include ./shared/metrics.yaml
+  ikea_vindriktning: !include ./lib/h801.yaml
