@@ -13,7 +13,7 @@ uart:
 binary_sensor:
   # Ref: https://blissair.com/what-is-pm-2-5.htm
   - platform: template
-    name: "${friendly_name} Safety"
+    name: "Safety"
     device_class: safety
     lambda: |-
       if (id(pm2_5_sensor).state < id(danger_treshold)) {
@@ -25,12 +25,12 @@ binary_sensor:
 sensor:
   - platform: pm1006
     pm_2_5:
-      name: "${friendly_name}"
+      name: "PM2.5"
       id: pm2_5_sensor
 
 text_sensor:
   - platform: template
-    name: "${friendly_name} Status"
+    name: "Status"
     icon: mdi:air-filter
     lambda: |-
       if (id(pm2_5_sensor).state < id(warn_threshold)) {

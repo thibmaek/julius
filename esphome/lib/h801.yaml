@@ -18,7 +18,7 @@ output:
 
 light:
   - platform: rgbw
-    name: "${friendly_name}"
+    name: "Light"
     red: pwm_channel_red
     green: pwm_channel_green
     blue: pwm_channel_blue

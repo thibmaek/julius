@@ -51,18 +51,18 @@ rf_bridge:
 
 binary_sensor:
   - platform: status
-    name: "${friendly_name} — Status"
+    name: "Status"
     on_state:
       then:
         - light.turn_on: wifi_led
   - platform: gpio
-    name: "${friendly_name} — Pair Button"
+    name: "Pair Button"
     pin: GPIO00
 
 light:
   - platform: binary
     id: wifi_led
-    name: "${friendly_name} — Wifi LED"
+    name: "Wifi LED"
     internal: True
     output: output_wifi_led
 

@@ -1,7 +1,7 @@
 binary_sensor:
   - platform: gpio
     internal: true
-    name: "${friendly_name}"
+    name: "Power"
     pin:
       number: GPIO14
       mode: INPUT_PULLUP
@@ -27,7 +27,7 @@ switch:
     pin: GPIO12
 
   - platform: template
-    name: "${friendly_name}"
+    name: "Power"
     optimistic: true
     id: relay_and_light
     turn_on_action:

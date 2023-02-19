@@ -12,7 +12,7 @@ packages:
 
 light:
   - platform: cwww
-    name: "${friendly_name}"
+    name: "Light"
     cold_white: output_cold_white
     warm_white: output_warm_white
     cold_white_color_temperature: "3500 K"
