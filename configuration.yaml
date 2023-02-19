@@ -14,7 +14,7 @@ scene: !include scenes.yaml
 recorder:
   db_url: !secret maria_db_url
 
-prometheus: !include intergrations/prometheus/prometheus.yaml
+prometheus: !include integrations/prometheus/prometheus.yaml
 
 ios:
   actions: !include integrations/ios/actions.yaml
