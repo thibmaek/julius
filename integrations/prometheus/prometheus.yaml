@@ -1,0 +1,20 @@
+namespace: homeassistant
+
+filter:
+  include_entities:
+    # Energy: Usage
+    - sensor.power_consumed
+    - sensor.power_produced
+    - sensor.gas_consumed_belgium
+    - sensor.energy_consumed_tariff_1
+    - sensor.energy_consumed_tariff_2
+    - sensor.energy_produced_tariff_1
+    - sensor.energy_produced_tariff_2
+    # Energy: Individual
+    - sensor.droogkast_power
+    - sensor.frigo_kelder_power
+    - sensor.wasmachine_power
+    - sensor.droogkast_energy
+    - sensor.frigo_kelder_energy
+    - sensor.wasmachine_energy
+    - sensor.tado_heating
