@@ -1,4 +1,5 @@
 - name: 'Sun up'
+  unique_id: sun_up
   icon: >
     {% if is_state("binary_sensor.sun_up", "on") %}
       mdi:weather-sunset-up

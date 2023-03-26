@@ -1,6 +1,7 @@
 - name: 'Brunch'
   unique_id: brunch
-  icon: mdi:egg-fried
+  icon: >
+    mdi:egg-fried
   state: >
     {% set day = as_timestamp(now()) | timestamp_custom("%A") | lower %}
     {% set brunchtime =
