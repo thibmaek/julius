@@ -1,0 +1,14 @@
+- name: 'Brunch'
+  unique_id: brunch
+  icon: mdi:egg-fried
+  state: >
+    {% set day = as_timestamp(now()) | timestamp_custom("%A") | lower %}
+    {% set brunchtime =
+      is_state('binary_sensor.noon_early', 'on') or
+      is_state('binary_sensor.morning_late', 'on')
+    %}
+    {% if day == "sunday" and brunchtime %}
+      on
+    {% else %}
+      off
+    {% endif %}
