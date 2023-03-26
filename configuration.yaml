@@ -25,8 +25,8 @@ mqtt:
   binary_sensor: !include integrations/mqtt/binary_sensor.yaml
 
 template:
-  - binary_sensor: !include integrations/template/binary_sensor.yaml
-  - sensor: !include integrations/template/sensor.yaml
+  - binary_sensor: !include_dir_merge_list integrations/template/binary_sensor
+  - sensor: !include_dir_merge_list integrations/template/sensor
 
 notify: !include_dir_merge_list integrations/notify
 

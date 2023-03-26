@@ -11,13 +11,3 @@
       not is_state("person.lotte_bijlsma", "home")
       and not is_state("person.thibault_maekelbergh", "home")
     }}
-
-- name: 'Sun up'
-  icon: >
-    {% if is_state("binary_sensor.sun_up", "on") %}
-      mdi:weather-sunset-up
-    {% else %}
-      mdi:weather-sunset-down
-    {% endif %}
-  state: >
-    {{ is_state("sun.sun", "above_horizon") }}
