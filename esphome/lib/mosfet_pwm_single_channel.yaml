@@ -1,0 +1,9 @@
+output:
+  - platform: esp8266_pwm
+    pin: GPIO15
+    id: pwm_channel
+
+light:
+  - platform: monochromatic
+    output: pwm_channel
+    name: "Light"
