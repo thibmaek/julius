@@ -10,4 +10,4 @@ packages:
   wifi: !include ./shared/wifi.yaml
   api: !include ./shared/api.yaml
   metrics: !include ./shared/metrics.yaml
-  ikea_vindriktning: !include ./lib/h801.yaml
+  h801_pwm_multi_channel: !include ./lib/h801_pwm_multi_channel.yaml
