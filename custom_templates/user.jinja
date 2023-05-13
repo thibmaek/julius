@@ -1,0 +1,7 @@
+{% macro first_name() %}
+{{ user.split(' ')[0] }}
+{% endmacro %}
+
+{% macro last_name() %}
+{{ user.split(' ')[1] }}
+{% endmacro %}

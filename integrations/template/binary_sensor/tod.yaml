@@ -3,12 +3,12 @@
   icon: >
     mdi:egg-fried
   state: >
-    {% set day = as_timestamp(now()) | timestamp_custom("%A") | lower %}
+    {% from 'dates.jinja' import is_day %}
     {% set brunchtime =
       is_state('binary_sensor.noon_early', 'on') or
       is_state('binary_sensor.morning_late', 'on')
     %}
-    {% if day == "sunday" and brunchtime %}
+    {% if is_day('sunday') and brunchtime %}
       on
     {% else %}
       off

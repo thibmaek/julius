@@ -1,0 +1,7 @@
+{% macro media_players_with_state(state='playing') %}
+{{ states.media_player | selectattr('state', 'eq', state) }}
+{% endmacro %}
+
+{% macro is_media_player_playing(entity_id) %}
+{{ is_state(entity_id, 'playing') }}
+{% endmacro %}

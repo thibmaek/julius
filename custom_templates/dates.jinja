@@ -1,0 +1,11 @@
+{% macro current_day() %}
+{{ as_timestamp(now()) | timestamp_custom("%A, %B %-d")}}
+{% endmacro %}
+
+{% macro day_of_the_week() %}
+{{ as_timestamp(now()) | timestamp_custom("%A") }}
+{% endmacro %}
+
+{% macro is_day(day) %}
+{{ (as_timestamp(now()) | timestamp_custom("%A") | lower) == (day | lower) }}
+{% endmacro %}

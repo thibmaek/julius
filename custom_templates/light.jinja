@@ -1,0 +1,12 @@
+{% macro lights_with_state(state='on') %}
+{{ states.light | selectattr('state', 'eq', state) }}
+{% endmacro %}
+
+{% macro lights_in_area(area, state='on') %}
+{{
+  lights_on_amount = area_entities(area)
+  | select('match', 'light.')
+  | select('is_state', state)
+  | list
+}}
+{% endmacro %}
