@@ -27,6 +27,11 @@ mqtt:
 template:
   - binary_sensor: !include_dir_merge_list integrations/template/binary_sensor
   - sensor: !include_dir_merge_list integrations/template/sensor
+  - trigger:
+      - platform: time_pattern
+        minutes: '/15'
+    sensor: !include integrations/template/trigger/sensor.yaml
+
 
 notify: !include_dir_merge_list integrations/notify
 

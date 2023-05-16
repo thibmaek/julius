@@ -10,4 +10,14 @@
   icon: >
     mdi:solar-power
   state: >
-    {{ states('solar_production_watt') > (states('input_number.high_solar_production') | int) }}
+    {{ states('solar_production_watt') > (states('input_number.high_solar_production') | int(default=0)) }}
+
+- name: 'Power (High Consumption)'
+  unique_id: electricity_delivery_power_max_threshold_reached
+  icon: mdi:flash-triangle
+  delay_on: 00:02:00
+  delay_off: 00:01:00
+  state: >
+    {% set consumption_in_watt = (states('sensor.power_consumed') | float(default=0)) * 1000 %}
+    {% set treshold = (states('input_number.power_consumption_treshold') | float(default=0) %}
+    {{ consumption_in_watt > treshold }}
