@@ -6,14 +6,14 @@
     {{ states('sensor.power_produced') > states('sensor.power_consumed') }}
 
 - name: 'High solar production'
-  unique_id: solar_high_production
+  unique_id: high_solar_production
   icon: >
     mdi:solar-power
   state: >
     {{ states('sensor.solar_production_watt') > (states('input_number.high_solar_production') | int(default=0)) }}
 
 - name: 'Power (High Consumption)'
-  unique_id: electricity_delivery_power_max_threshold_reached
+  unique_id: power_high_consumption
   icon: mdi:flash-triangle
   delay_on: 00:02:00
   delay_off: 00:01:00

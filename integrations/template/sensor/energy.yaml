@@ -1,12 +1,12 @@
 - name: 'Power Delivery (15m)'
-  unique_id: electricity_delivery_power_15m
+  unique_id: power_delivery_15m
   unit_of_measurement: "kW"
   icon: >
     mdi:transmission-tower
   state: >
     {{ (states('sensor.power_measurement_15_min') | float(default=0)) * 4 | float }}
 
-- name: 'Solar Production'
+- name: 'Solar Production (Watt)'
   unique_id: solar_production_watt
   unit_of_measurement: 'W'
   icon: >

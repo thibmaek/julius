@@ -1,17 +1,17 @@
 - name: 'Electricity Max Peak (Daily)'
-  unique_id: electricity_delivery_power_daily_15m_max
+  unique_id: electricity_max_peak_daily
   unit_of_measurement: 'kW'
   icon: >
     mdi:transmission-tower
   state: >
-    {% if is_number(states('sensor.electricity_delivery_power_daily_15m_max')) %}
+    {% if is_number(states('sensor.electricity_max_peak_daily')) %}
       {% if ((now().hour == 0) and (now().minute < 15)) %}
-        {{ states('sensor.electricity_delivery_power_15m') | float }}
+        {{ states('sensor.power_delivery_15m') | float }}
       {% else %}
-        {% if ((states('sensor.electricity_delivery_power_daily_15m_max') | float) < (states('sensor.electricity_delivery_power_15m')) | float) %}
-          {{ states('sensor.electricity_delivery_power_15m') or 0 | float }}
+        {% if ((states('sensor.electricity_max_peak_daily') | float) < (states('sensor.power_delivery_15m')) | float) %}
+          {{ states('sensor.power_delivery_15m') or 0 | float }}
         {% else %}
-          {{ states('sensor.electricity_delivery_power_daily_15m_max') | float }}
+          {{ states('sensor.electricity_max_peak_daily') | float }}
         {% endif %}
       {% endif %}
     {% else %}
@@ -19,19 +19,19 @@
     {% endif %}
 
 - name: 'Electricity Max Peak (Monthly)'
-  unique_id: electricity_delivery_power_monthly_15m_max
+  unique_id: electricity_max_peak_monthly
   unit_of_measurement: 'kW'
   icon: >
     mdi:transmission-tower
   state: >
-    {% if is_number(states('sensor.electricity_delivery_power_monthly_15m_max')) %}
+    {% if is_number(states('sensor.electricity_max_peak_monthly')) %}
       {% if ((now().day == 1) and (now().hour == 0) and (now().minute < 15)) %}
-        {{ states('sensor.electricity_delivery_power_15m') | float }}
+        {{ states('sensor.power_delivery_15m') | float }}
       {% else %}
-        {% if ((states('sensor.electricity_delivery_power_monthly_15m_max') | float) < (states('sensor.electricity_delivery_power_15m')) | float) %}
-          {{ states('sensor.electricity_delivery_power_15m') or 0 | float }}
+        {% if ((states('sensor.electricity_max_peak_monthly') | float) < (states('sensor.power_delivery_15m')) | float) %}
+          {{ states('sensor.power_delivery_15m') or 0 | float }}
         {% else %}
-          {{ states('sensor.electricity_delivery_power_monthly_15m_max') | float }}
+          {{ states('sensor.electricity_max_peak_monthly') | float }}
         {% endif %}
       {% endif %}
     {% else %}
