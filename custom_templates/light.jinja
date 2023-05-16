@@ -1,7 +1,3 @@
-{% macro lights_with_state(state='on') %}
-{{ states.light | selectattr('state', 'eq', state) }}
-{% endmacro %}
-
 {% macro lights_in_area(area, state) %}
 {{
   area_entities(area)

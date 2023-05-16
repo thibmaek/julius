@@ -8,9 +8,9 @@
       mdi:lightbulb-multiple-off
     {% endif %}
   state: >
-    {% from 'light.jinja' import lights_with_state %}
-    {{ lights_with_state('on')
-        | rejectattr("entity_id", "search", "light.(beneden|boven|gang|slaapkamer|z2m)")
+    {{ states.light
+        | selectattr('state', 'eq', 'on')
+        | rejectattr('entity_id', 'search', 'light.(beneden|boven|gang|slaapkamer|z2m)')
         | list
         | count
     }}
