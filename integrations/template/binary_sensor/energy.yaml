@@ -10,7 +10,7 @@
   icon: >
     mdi:solar-power
   state: >
-    {{ states('solar_production_watt') > (states('input_number.high_solar_production') | int(default=0)) }}
+    {{ states('sensor.solar_production_watt') > (states('input_number.high_solar_production') | int(default=0)) }}
 
 - name: 'Power (High Consumption)'
   unique_id: electricity_delivery_power_max_threshold_reached
