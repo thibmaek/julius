@@ -19,5 +19,5 @@
   delay_off: 00:01:00
   state: >
     {% set consumption_in_watt = (states('sensor.power_consumed') | float(default=0)) * 1000 %}
-    {% set treshold = (states('input_number.power_consumption_treshold') | float(default=0) %}
+    {% set treshold = states('input_number.power_consumption_treshold') | float(default=0) %}
     {{ consumption_in_watt > treshold }}
