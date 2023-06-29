@@ -12,6 +12,7 @@ packages:
   base_config: !include ./shared/base_config.yaml
   wifi: !include ./shared/wifi.yaml
   api: !include ./shared/api.yaml
+  mqtt: !include ./shared/mqtt.yaml
 
 uart:
   tx_pin: GPIO01
@@ -48,6 +49,20 @@ rf_bridge:
             low: !lambda 'char buffer [10];return itoa(data.low,buffer,16);'
             high: !lambda 'char buffer [10];return itoa(data.high,buffer,16);'
             code: !lambda 'char buffer [10];return itoa(data.code,buffer,16);'
+      - mqtt.publish:
+          topic: '${device_name}/rf/received'
+          payload: !lambda |-
+            char sync_buff [10];
+            char low_buff [10];
+            char high_buff [10];
+            char code_buff [10];
+
+            std::string sync = itoa(data.sync, sync_buff, 16);
+            std::string low = itoa(data.low, low_buff, 16);
+            std::string high = itoa(data.high, high_buff, 16);
+            std::string code = itoa(data.code, code_buff, 16);
+
+            return "sync=" + sync + ",low=" + low + ",high=" + high + ",code=" + code;
 
 binary_sensor:
   - platform: status
