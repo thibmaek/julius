@@ -35,5 +35,7 @@ template:
 
 notify: !include_dir_merge_list integrations/notify
 
+rest_command: !include_dir_merge_named: intergrations/rest_command
+
 # HACS
 afvalbeheer: !include integrations/hacs/afvalbeheer.yaml
