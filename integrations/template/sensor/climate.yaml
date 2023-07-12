@@ -1,0 +1,15 @@
+- name: 'Temperature (Bureau Thib)'
+  unique_id: bureau_thib_climate_temperature
+  unit_of_measurement: '°C'
+  icon: >
+    mdi:thermometer
+  state: >
+    {{ state_attr('climate.radiator_bureau_thib', 'current_temperature') }}
+
+- name: 'Temperature (Slaapkamer)'
+  unique_id: slaapkamer_climate_temperature
+  unit_of_measurement: '°C'
+  icon: >
+    mdi:thermometer
+  state: >
+    {{ state_attr('climate.radiator_slaapkamer', 'current_temperature') }}
