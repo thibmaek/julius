@@ -1,6 +1,7 @@
 - platform: mqtt_room
   name: 'Apple Watch (Thib)'
   device_id: !secret ble_irk_apple_watch_thib
+  unique_id: espresense_apple_watch_thib
   state_topic: 'espresense/rooms'
   timeout: 5
   away_timeout: 120
@@ -8,6 +9,7 @@
 - platform: mqtt_room
   name: 'iPhone (Lotte)'
   device_id: !secret ble_irk_iphone_lotte
+  unique_id: espresense_iphone_lotte
   state_topic: 'espresense/rooms'
   timeout: 5
   away_timeout: 120
@@ -15,6 +17,7 @@
 - platform: mqtt_room
   name: 'iPhone (Thib)'
   device_id: !secret ble_irk_iphone_thib
+  unique_id: espresense_iphone_thib
   state_topic: 'espresense/rooms'
   timeout: 5
   away_timeout: 120
