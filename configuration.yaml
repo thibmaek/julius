@@ -1,4 +1,3 @@
-# Loads default set of integrations. Do not remove.
 default_config:
 
 frontend:
@@ -14,16 +13,16 @@ scene: !include scenes.yaml
 recorder:
   db_url: !secret maria_db_url
 
-prometheus: !include integrations/prometheus/prometheus.yaml
-
+# Integrations
+cover: !include_dir_merge_list integrations/cover
 ios:
   actions: !include integrations/ios/actions.yaml
-
-sensor: !include_dir_merge_list integrations/sensor
-
 mqtt:
   binary_sensor: !include integrations/mqtt/binary_sensor.yaml
-
+notify: !include_dir_merge_list integrations/notify
+prometheus: !include integrations/prometheus/prometheus.yaml
+rest_command: !include_dir_merge_named integrations/rest_command
+sensor: !include_dir_merge_list integrations/sensor
 template:
   - binary_sensor: !include_dir_merge_list integrations/template/binary_sensor
   - sensor: !include_dir_merge_list integrations/template/sensor
@@ -32,10 +31,5 @@ template:
         minutes: '/15'
     sensor: !include integrations/template/trigger/sensor.yaml
 
-
-notify: !include_dir_merge_list integrations/notify
-
-rest_command: !include_dir_merge_named integrations/rest_command
-
-# HACS
+# Integrations (HACS)
 afvalbeheer: !include integrations/hacs/afvalbeheer.yaml
