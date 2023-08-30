@@ -1,0 +1,13 @@
+substitutions:
+  device_name: 'esp32-ble-proxy-garage'
+  friendly_name: 'ESP32 BLE Proxy (Garage)'
+
+esp32:
+  board: esp32dev
+
+packages:
+  base_config: !include ./shared/base_config.yaml
+  wifi: !include ./shared/wifi.yaml
+  api: !include ./shared/api.yaml
+  metrics: !include ./shared/metrics.yaml
+  ble_proxy: !include ./lib/ble_proxy.yaml
