@@ -26,7 +26,6 @@ rest_command: !include_dir_merge_named integrations/rest_command
 sensor: !include_dir_merge_list integrations/sensor
 template:
   - binary_sensor: !include_dir_merge_list integrations/template/binary_sensor
-  - sensor: !include_dir_merge_list integrations/template/sensor
   - trigger:
       - platform: time_pattern
         minutes: '/15'
