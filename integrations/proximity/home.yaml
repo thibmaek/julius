@@ -1,0 +1,9 @@
+home:
+  zone: home
+  ignored_zones:
+    - werk_lotte
+    - werk_thib
+  devices:
+    - person.lotte_bijlsma
+    - person.thibault_maekelbergh
+  tolerance: 50
