@@ -1,13 +1,13 @@
 - platform: group
   name: 'Family phones'
   services:
-    - service: mobile_app_thibaults_iphone
+    - service: mobile_app_iphone_15_van_thibault
     - service: mobile_app_lottes_iphone
 
 - platform: group
   name: 'Family devices'
   services:
-    - service: mobile_app_thibaults_iphone
+    - service: mobile_app_iphone_15_van_thibault
     - service: mobile_app_lottes_iphone
     - service: mobile_app_macbook_pro_thibault_itp
     - service: mobile_app_lottes_imac
@@ -15,7 +15,7 @@
 - platform: group
   name: 'Thibault devices'
   services:
-    - service: mobile_app_thibaults_iphone
+    - service: mobile_app_iphone_15_van_thibault
     - service: mobile_app_macbook_pro_thibault_itp
     - service: mobile_app_thibaults_ipad
 
