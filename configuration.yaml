@@ -33,3 +33,4 @@ template:
 
 # Integrations (HACS)
 afvalbeheer: !include integrations/hacs/afvalbeheer.yaml
+battery_notes:
