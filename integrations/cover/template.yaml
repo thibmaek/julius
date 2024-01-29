@@ -17,14 +17,14 @@
           mdi:garage
         {% endif %}
       open_cover:
-        service: switch.turn_on
+        service: switch.toggle
         data:
           entity_id: switch.garagepoort
       close_cover:
-        service: switch.turn_on
+        service: switch.toggle
         data:
-          entity_id: garagepoort
+          entity_id: switch.garagepoort
       stop_cover:
-        service: switch.turn_on
+        service: switch.toggle
         data:
-          entity_id: garagepoort
+          entity_id: switch.garagepoort
