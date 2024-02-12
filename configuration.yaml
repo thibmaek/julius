@@ -21,7 +21,6 @@ mqtt:
   binary_sensor: !include integrations/mqtt/binary_sensor.yaml
 notify: !include_dir_merge_list integrations/notify
 prometheus: !include integrations/prometheus/prometheus.yaml
-proximity: !include_dir_merge_named integrations/proximity
 rest_command: !include_dir_merge_named integrations/rest_command
 sensor: !include_dir_merge_list integrations/sensor
 template:
