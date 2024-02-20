@@ -1,0 +1,15 @@
+api_version: 2
+ssl: false
+host: !secret influxdb_host
+organization: a9422888bde38f85
+bucket: homeassisstant
+token: !secret influxdb_token
+include:
+  entity_globs:
+    - sensor.*_temperature
+    - sensor.*_humidity
+    - sensor.*_pressure
+tags:
+  source: ha_integration
+tags_attributes:
+  - friendly_name
