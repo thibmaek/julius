@@ -1,8 +1,9 @@
 api_version: 2
 ssl: false
 host: !secret influxdb_host
+port: 8086
 organization: a9422888bde38f85
-bucket: homeassisstant
+bucket: homeassistant
 token: !secret influxdb_token
 include:
   entity_globs:
