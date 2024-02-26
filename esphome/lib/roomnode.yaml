@@ -53,7 +53,7 @@ display:
       }
 
 sensor:
-  - platform: bme280
+  - platform: bme280_i2c
     address: 0x76
     temperature:
       id: TEMPERATURE
