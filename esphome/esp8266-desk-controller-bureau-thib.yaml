@@ -13,25 +13,24 @@ packages:
   mqtt: !include ./shared/mqtt.yaml
 
 binary_sensor:
-#   GPIO Pin 16 does not support pullup pin mode. Please choose another pin.
-  # - platform: gpio
-  #   name: "Button 1"
-  #   internal: true
-  #   pin:
-  #     number: D0
-  #     mode: INPUT_PULLUP
-  #     inverted: true
-  #   on_press:
-  #     - mqtt.publish:
-  #         topic: "esphome/${device_name}/button"
-  #         payload: "1"
-  #   on_click:
-  #     min_length: 1s
-  #     max_length: 2s
-  #     then:
-  #       - mqtt.publish:
-  #           topic: "esphome/${device_name}/button_hold"
-  #           payload: "1"
+  - platform: gpio
+    name: "Button 1"
+    internal: true
+    pin:
+      number: D4
+      mode: INPUT_PULLUP
+      inverted: true
+    on_press:
+      - mqtt.publish:
+          topic: "esphome/${device_name}/button"
+          payload: "1"
+    on_click:
+      min_length: 1s
+      max_length: 2s
+      then:
+        - mqtt.publish:
+            topic: "esphome/${device_name}/button_hold"
+            payload: "1"
 
   - platform: gpio
     name: "Button 2"
@@ -43,30 +42,30 @@ binary_sensor:
     on_press:
       - mqtt.publish:
           topic: "esphome/${device_name}/button"
-          payload: "1"
+          payload: "2"
     on_click:
       min_length: 1s
       max_length: 2s
       then:
         - mqtt.publish:
             topic: "esphome/${device_name}/button_hold"
-            payload: "1"
+            payload: "2"
 
   - platform: gpio
     name: "Button 3"
     internal: true
     pin:
-      number: D2
+      number: D3
       mode: INPUT_PULLUP
       inverted: true
     on_press:
       - mqtt.publish:
           topic: "esphome/${device_name}/button"
-          payload: "1"
+          payload: "3"
     on_click:
       min_length: 1s
       max_length: 2s
       then:
         - mqtt.publish:
             topic: "esphome/${device_name}/button_hold"
-            payload: "1"
+            payload: "3"
