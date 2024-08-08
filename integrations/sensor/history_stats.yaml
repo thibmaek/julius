@@ -1,7 +1,0 @@
-- platform: history_stats
-  name: 'TV Watched (This week)'
-  entity_id: media_player.samsung_7_series_50
-  state: 'on'
-  type: time
-  start: "{{ as_timestamp(now().replace(hour=0, minute=0, second=0, microsecond=0)) - now().weekday() * 86400 }}"
-  end: "{{ now() }}"
