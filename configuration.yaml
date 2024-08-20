@@ -24,12 +24,6 @@ notify: !include_dir_merge_list integrations/notify
 prometheus: !include integrations/prometheus/prometheus.yaml
 rest_command: !include_dir_merge_named integrations/rest_command
 sensor: !include_dir_merge_list integrations/sensor
-template:
-  - binary_sensor: !include_dir_merge_list integrations/template/binary_sensor
-  - trigger:
-      - platform: time_pattern
-        minutes: '/15'
-    sensor: !include integrations/template/trigger/sensor.yaml
 
 # Integrations (HACS)
 afvalbeheer: !include integrations/hacs/afvalbeheer.yaml
