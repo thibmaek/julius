@@ -19,12 +19,12 @@
       open_cover:
         service: switch.toggle
         data:
-          entity_id: switch.garagepoort
+          entity_id: switch.fingerbot_garage
       close_cover:
         service: switch.toggle
         data:
-          entity_id: switch.garagepoort
+          entity_id: switch.fingerbot_garage
       stop_cover:
         service: switch.toggle
         data:
-          entity_id: switch.garagepoort
+          entity_id: switch.fingerbot_garage
