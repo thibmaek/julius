@@ -7,3 +7,21 @@
     - summary
     - history
     - ingredients
+
+- platform: rest
+  name: "Mealie Today (ID)"
+  resource: !secret mealie_today_api_url
+  value_template: "{{ value_json[0].recipe.id }}"
+  force_update: true
+  scan_interval: 3600
+  headers:
+    Authorization: !secret mealie_api_token
+
+- platform: rest
+  name: "Mealie Today (Name)"
+  resource: !secret mealie_today_api_url
+  value_template: "{{ value_json[0].recipe.name }}"
+  force_update: true
+  scan_interval: 3600
+  headers:
+    Authorization: !secret mealie_api_token
