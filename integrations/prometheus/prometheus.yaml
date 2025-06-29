@@ -12,9 +12,7 @@ filter:
     - sensor.energy_produced_tariff_2
     # Energy: Individual
     - sensor.droogkast_power
-    - sensor.frigo_kelder_power
     - sensor.wasmachine_power
     - sensor.droogkast_energy
-    - sensor.frigo_kelder_energy
     - sensor.wasmachine_energy
     - sensor.tado_heating

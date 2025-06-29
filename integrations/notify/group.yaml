@@ -9,7 +9,6 @@
   services:
     - service: mobile_app_iphone_16_van_thibault
     - service: mobile_app_lottes_iphone_16_pro
-    - service: mobile_app_macbook_pro_thibault_itp
     - service: mobile_app_thibaults_mac_studio
     - service: mobile_app_lottes_imac
 
@@ -18,8 +17,7 @@
   services:
     - service: mobile_app_iphone_16_van_thibault
     - service: mobile_app_thibaults_mac_studio
-    - service: mobile_app_thibaults_ipad
-    - service: mobile_app_macbook_pro_thibault_itp
+    - service: mobile_app_ipad_air_van_thibault
 
 - platform: group
   name: 'Lotte devices'
