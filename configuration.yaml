@@ -25,5 +25,3 @@ prometheus: !include integrations/prometheus/prometheus.yaml
 rest_command: !include_dir_merge_named integrations/rest_command
 sensor: !include_dir_merge_list integrations/sensor
 
-# Integrations (HACS)
-battery_notes:
