@@ -1,0 +1,47 @@
+substitutions:
+  device_name: 'esp32-bed-sensor-slaapkamer'
+  friendly_name: 'Bed Sensor (Slaapkamer)'
+
+esp32:
+  board: esp32dev
+
+packages:
+  base_config: !include ./shared/base_config.yaml
+  wifi: !include ./shared/wifi.yaml
+  api: !include ./shared/api.yaml
+  metrics: !include ./shared/metrics.yaml
+
+sensor:
+  - platform: adc
+    pin: GPIO35
+    name: "Bed 1"
+    id: "bed_sensor_1"
+    icon: mdi:bed
+    update_interval: 0.5s
+    filters:
+      - multiply: 3.3
+      - sliding_window_moving_average:
+          window_size: 10
+          send_every: 1
+      - or:
+          - throttle: 180s
+          - delta: 0.02
+  - platform: adc
+    pin: GPIO34
+    name: "Bed 2"
+    id: "bed_sensor_2"
+    icon: mdi:bed
+    update_interval: 0.5s
+    filters:
+      - multiply: 3.3
+      - sliding_window_moving_average:
+          window_size: 10
+          send_every: 1
+      - or:
+          - throttle: 180s
+          - delta: 0.02
+
+  - platform: homeassistant
+    name: "Trigger Level"
+    id: "trigger_level"
+    entity_id: input_number.trigger_level_bed_sensor
