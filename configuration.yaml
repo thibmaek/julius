@@ -14,7 +14,6 @@ recorder:
   db_url: !secret maria_db_url
 
 # Integrations
-cover: !include_dir_merge_list integrations/cover
 influxdb: !include integrations/influxdb/influxdb.yaml
 ios:
   actions: !include integrations/ios/actions.yaml
