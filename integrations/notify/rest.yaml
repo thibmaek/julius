@@ -1,0 +1,10 @@
+- platform: rest
+  name: ntfy
+  method: POST_JSON
+  data:
+    topic: homeassistant
+  title_param_name: title
+  message_param_name: message
+  resource: !secret ntfy_url
+  headers:
+    Authorization: !secret ntfy_token
