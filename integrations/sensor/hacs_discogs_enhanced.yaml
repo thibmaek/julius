@@ -1,0 +1,9 @@
+- platform: discogs_enhanced
+  token: !secret discogs_token 
+  monitored_conditions:
+    - collection
+    - wantlist
+    - random_record
+    - collection_value_min
+    - collection_value_median
+    - collection_value_max
