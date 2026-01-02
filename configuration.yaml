@@ -13,6 +13,9 @@ scene: !include scenes.yaml
 recorder:
   db_url: !secret maria_db_url
 
+system_log:
+  fire_event: true
+
 # Integrations
 influxdb: !include integrations/influxdb/influxdb.yaml
 ios:
