@@ -17,7 +17,6 @@ system_log:
   fire_event: true
 
 # Integrations
-influxdb: !include integrations/influxdb/influxdb.yaml
 ios:
   actions: !include integrations/ios/actions.yaml
 mqtt:
