@@ -1,0 +1,34 @@
+esphome:
+  name: bed-sensor
+  friendly_name: Bed sensor
+
+logger:
+
+esp8266:
+  board: d1_mini 
+
+packages:
+  base_config: !include ./shared/base_config.yaml
+  wifi: !include ./shared/wifi.yaml
+  api: !include ./shared/api.yaml
+
+sensor:
+  - platform: adc
+    pin: A0
+    name: "Bed Sensor"
+    id: "bed_sensor"
+    icon: mdi:bed
+    update_interval: 0.5s
+    filters:
+      - multiply: 3.3
+      - sliding_window_moving_average:
+          window_size: 10
+          send_every: 1
+      - or:
+          - throttle: 180s
+          - delta: 0.02
+
+  - platform: homeassistant
+    name: "Trigger Level"
+    id: "trigger_level"
+    entity_id: input_number.trigger_level_bed_sensor
